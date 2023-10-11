@@ -10,18 +10,19 @@
   <body>
     <header>
       <div id="cor1">
-      <!--<h1>KANINO</h1>-->
-        <p id="msg">O lugar perfeito para os seus amigos peludos!</p>
-        <div class="search-container">
-          <form action="/pesquisar" method="GET">
-            <input type="text" class="search-box" name="q" placeholder="Localize o Veterinario mais proximo...">
-            <button type="submit" class="search-button">Pesquisar</button>
-          </form>
+        <!--<h1>KANINO</h1>-->
+          <p id="msg">O lugar perfeito para os seus amigos peludos!</p>
+          <div class="logCad">
+            <img id="icone" src="../imagens/icone.png" alt="">
+            <a id="entrar" href="/login/login.html">Entrar</a>                
+            <a id="cadastrar" href="/cadastro/index.html">Cadastrar</a>
+          </div>
         </div>
-      </div>
-      <div id="img">
-        <a href="../index.html"><img id="logo" src="../imagens/kaninologo.png"></a>
-      </div>
+        <div id="img">
+          <a href="../index.html"><img id="logo" src="../imagens/kaninologo.png"></a>
+        </div>
+        <div id="org">
+        </div>
     </header>
     <main>
       <div class="container">
@@ -74,8 +75,8 @@
           </div>
 
           <div class="form-group">
-            <label for="name">Cpf</label>
-            <input type="text" id="Cpf" name="name" placeholder="Digite seu cpf"/>
+            <label for="name">CPF</label>
+            <input type="text" id="Cpf" name="name" placeholder="Digite seu CPF"/>
           </div>
 
           <div class="form-group">
@@ -95,28 +96,23 @@
     </main>
     <footer>
       <div id="sobre">
-        <h3>Sobre a Kanino</h3>
-        <a>Central de atendimento</a>
+        <a id="sobreKanino" href="./index.html">Sobre a Kanino</a>
         <p>
-          (xx)xxxx-xxxx / (xx)xxxxx-xxxx<br>
-          Problemas para visualizar
+          (11)9123-4567 / (11)99876-5432
         </p>
       </div>
       <div id="siga">
         <p>
-          Siga a Kanino nas redes sociais<br>
           @Kanino_Oficial
         </p>
         <address>
-          Endereço da empresa - endereço ficticio
+          Endereço da empresa - São Paulo-SP
         </address>
       </div>
       <div id="horario">
-        <h3>Horário de funcionamento</h3>
         <p>
-          Seg a Sex 06h as 22h<br>
-          Entregas em horário comercial<br>
-          Prazo de atendimento dos chamados 48h<br>
+          Prazo de resposta as duvidas de 48h<br>
+          Todos os direitos reservados
         </p>
       </div>
     </footer>
