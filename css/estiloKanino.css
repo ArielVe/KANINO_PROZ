@@ -221,6 +221,17 @@ h2{
     color: rgba(46, 85, 163, 1);
 }
 
+#erro-login {
+    color: red;
+}
+
+#erro-rec {
+    color: red;
+}
+
+#redefinir-senha {
+    color: #037912;
+}
 
 /* Estilo para o rodapé */
 footer {

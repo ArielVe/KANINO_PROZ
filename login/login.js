@@ -5,15 +5,21 @@ let login = [
     }
 ]
 
-let email = document.getElementById ("email");
-let senha = document.getElementById ("password");
+for (let i = 0; i <= login.length; i++) { 
+    let email = document.getElementById ("email");
+    let senha = document.getElementById ("password");
+    
+    let buttom = document.getElementById ("buttom-login")
 
-let buttom = document.getElementById ("buttom-login")
+    let erro = document.getElementById ("erro-login")
 
-buttom.addEventListener ("click", function() {
-    if (email.value == login[0].login && senha.value == login[0].senha) {
-        alert ('Bem vindo')
-    } else {
-        alert ("Senha Incorreta, tente novamente")
-    }
-} )
+    erro.style.display = "none"
+    
+    buttom.addEventListener ("click", function() {
+        if (email.value == login[i].login && senha.value == login[i].senha) {
+            window.location.href = "../index.html"
+        } else {
+            erro.style.display = "block"
+        }
+    } )
+}
