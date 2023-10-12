@@ -8,13 +8,22 @@
     <title>Cadastro</title>
   </head>
   <body>
-    <div id="cor1">
-      <!--<h1>KANINO</h1>-->
-        <p id="msg">O lugar perfeito para os seus amigos peludos!</p>
-      </div>
-      <div id="img">
-        <a href="../index.html"><img id="logo" src="../imagens/kaninologo.png"></a>
-      </div> 
+    <header>
+      <div id="cor1">
+        <!--<h1>KANINO</h1>-->
+          <p id="msg">O lugar perfeito para os seus amigos peludos!</p>
+          <div class="logCad">
+            <img id="icone" src="../imagens/icone.png" alt="">
+            <a id="entrar" href="/login/login.html">Entrar</a>                
+            <a id="cadastrar" href="/cadastro/index.html">Cadastrar</a>
+          </div>
+        </div>
+        <div id="img">
+          <a href="../index.html"><img id="logo" src="../imagens/kaninologo.png"></a>
+        </div>
+        <div id="org">
+        </div>
+    </header>
     <main>
       <div class="container">
         <h1 class="title">Crie sua conta</h1>
@@ -66,8 +75,8 @@
           </div>
 
           <div class="form-group">
-            <label for="name">Cpf</label>
-            <input type="text" id="Cpf" name="name" placeholder="Digite seu cpf"/>
+            <label for="name">CPF</label>
+            <input type="text" id="Cpf" name="name" placeholder="Digite seu CPF"/>
           </div>
 
           <div class="form-group">
@@ -86,30 +95,24 @@
       </div>
     </main>
     <footer>
-      <div class="rodape-base" id="rodape-primeiro">
-        <h3 class="letra-branca">Sobre a Kanino</h3>
-        <a class="letra-branca">Central de atendimento</a>
-        <p class="letra-branca">
-          (xx)xxxx-xxxx / (xx)xxxxx-xxxx<br>
-          Problemas para visualizar
+      <div id="sobre">
+        <a id="sobreKanino" href="./index.html">Sobre a Kanino</a>
+        <p>
+          (11)9123-4567 / (11)99876-5432
         </p>
       </div>
-      <div class="rodape-base" id="redes-sociais">
-        <p class="letra-branca">
-          Siga a Kanino nas redes sociais<br>
+      <div id="siga">
+        <p>
           @Kanino_Oficial
         </p>
-        <address class="letra-branca">
-          Endereço da empresa - endereço ficticio
+        <address>
+          Endereço da empresa - São Paulo-SP
         </address>
       </div>
-      <div class="rodape-base">
-        <h3>Horário de funcionamento</h3>
+      <div id="horario">
         <p>
-          Seg a Sex 06h as 22h<br>
-          Entregas em horário comercial<br>
-          Prazo de atendimento dos chamados<br>
-          48h<br>
+          Prazo de resposta as duvidas de 48h<br>
+          Todos os direitos reservados
         </p>
       </div>
     </footer>

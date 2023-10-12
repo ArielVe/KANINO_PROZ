@@ -1,4 +1,4 @@
-const elementosBusca = [
+const elementosVet = [
     {
         nome: "Nome",
         logradouro: "Nome da rua ou avenida",
@@ -56,16 +56,35 @@ const elementosBusca = [
     }
 ]
 
-for (let i = 0; i < elementosBusca.length; i++){
+
+for (let i = 0; i < elementosVet.length; i++){
 
     let article = document.createElement("article")
 
 
     article.innerHTML = `
-    <h3> ${elementosBusca[i].nome} </h3>
-    <p>${elementosBusca[i].logradouro}, ${elementosBusca[i].numero}, ${elementosBusca[i].bairro}, ${elementosBusca[i].cep}. ${elementosBusca[i].cidade}/${elementosBusca[i].uf}.</p>
-    <p>${elementosBusca[i].telefone} / ${elementosBusca[i].email}</p>
-    <p>${elementosBusca[i].descricao}</p>
+    <h3> ${elementosVet[i].nome} </h3>
+    <p>${elementosVet[i].logradouro}, ${elementosVet[i].numero}, ${elementosVet[i].bairro}, ${elementosVet[i].cep}. ${elementosVet[i].cidade}/${elementosVet[i].uf}.</p>
+    <p>${elementosVet[i].telefone} / ${elementosVet[i].email}</p>
+    <p>${elementosVet[i].descricao}</p>
+    `
+    
+    let main = document.querySelector('main')
+    
+    main.appendChild(article)
+
+}
+
+for (let i = 0; i < elementosOng.length; i++){
+
+    let article = document.createElement("article")
+
+
+    article.innerHTML = `
+    <h3> ${elementosOng[i].nome} </h3>
+    <p>${elementosOng[i].logradouro}, ${elementosOng[i].numero}, ${elementosOng[i].bairro}, ${elementosOng[i].cep}. ${elementosOng[i].cidade}/${elementosOng[i].uf}.</p>
+    <p>${elementosOng[i].telefone} / ${elementosOng[i].email}</p>
+    <p>${elementosOng[i].descricao}</p>
     `
     
     let main = document.querySelector('main')

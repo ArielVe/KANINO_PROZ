@@ -5,17 +5,23 @@ let login = [
     }
 ]
 
-let email = document.getElementById ("email");
-let senha = document.getElementById ("password");
-let senhaRecuperada = document.getElementById ("password2")
+for (let i = 0; i < login.length; i++) {
 
-let buttomRec = document.getElementById ("buttom-rec")
+    let email = document.getElementById ("email");
+    let senha = document.getElementById ("password");
+    let senhaRecuperada = document.getElementById ("password2")
+    let buttomRec = document.getElementById ("buttom-rec")
 
-buttomRec.addEventListener ("click", function() {
-    if (email.value == login[0].login && senha.value == senhaRecuperada.value) {
-        alert ('Nova Senha Confirmada')
-        login[0].senha = senha.value
-    } else {
-        alert ("Senha Incorreta, tente novamente")
+    let span = document.querySelector("span")
+
+    buttomRec.addEventListener ("click", function() {
+        if (email.value == login[i].login && senha.value == senhaRecuperada.value) {
+            span.id = "redefinir-senha"
+            span.innerText = "Sua senha foi redefinida com sucesso."
+            login[i].senha = senha.value
+        } else {
+            span.id = "erro-rec"
+            span.innerText = "Informações incorretas, por favor, insira novamente."
+        }
+    } )
     }
-} )
