@@ -16,6 +16,13 @@ function adicionarPergunta() {
     perguntaDiv.className = "pergunta";
     perguntaDiv.innerHTML = `<p>${pergunta}</p><p class="espaco-resposta"></p><p>${dataHora}</p><button onclick="exibirResposta(this)" id="btnDuv3">Responder</button><div class="resposta"><textarea cols="200" rows="auto" placeholder="Digite sua resposta aqui"></textarea><button onclick="enviarResposta(this)" id="btnDuv4">Enviar Resposta</button></div>`;
     blog.appendChild(perguntaDiv);
+
+    perguntas.push({
+      pergunta: pergunta,
+      resposta: "", // Inicialmente vazia, pois não foi respondida ainda
+      dataHora: dataHora
+    });
+
     perguntaInput.value = "";
     var campoPergunta = document.getElementById("campoPergunta");
     campoPergunta.style.display = "none";
@@ -43,6 +50,12 @@ function enviarResposta(button) {
     dataHoraP.classList.add("espaco-resposta");
     respostaDiv.parentNode.insertBefore(respostaP, respostaDiv);
     respostaDiv.parentNode.insertBefore(dataHoraP, respostaDiv);
+
+    var perguntaDiv = respostaDiv.parentNode;
+    var index = Array.from(perguntaDiv.parentNode.children).indexOf(perguntaDiv);
+    perguntas[index - 1].resposta = resposta;
+
+
     respostaTextarea.value = "";
     respostaDiv.style.display = "none";
   }
