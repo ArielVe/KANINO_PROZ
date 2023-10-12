@@ -1,65 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../imagens/kaninologo.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../imagens/kaninologo.png"
+      type="image/x-icon"
+    />
     <title>Kanino</title>
-    <link rel="stylesheet" href="../css/estiloKanino.css">
+    <link rel="stylesheet" href="../css/estiloKanino.css" />
     <script src="script.js"></script>
-</head>
-<body>
-  <header>
-    <div id="cor1">
-      <p id="msg">O lugar perfeito para os seus amigos peludos!</p>
-      <div class="logCad">
-        <img id="icone" src="../imagens/icone.png" alt="">
-        <a id="entrar" href="/login/login.html">Entrar</a>                
-        <a id="cadastrar" href="/cadastro/index.html">Cadastrar</a>
+  </head>
+  <body>
+    <header>
+      <div id="cor1">
+        <p id="msg">O lugar perfeito para os seus amigos peludos!</p>
+        <div class="logCad">
+          <img id="icone" src="../imagens/icone.png" alt="" />
+          <a id="entrar" href="/login/login.html">Entrar</a>
+          <a id="cadastrar" href="/cadastro/index.html">Cadastrar</a>
+        </div>
       </div>
-    </div>
-    <div id="img">
-      <a href="../index.html"><img id="logo" src="../imagens/kaninologo.png"></a>
-    </div>
-    <nav> 
+      <div id="img">
+        <a href="../index.html"
+          ><img id="logo" src="../imagens/kaninologo.png"
+        /></a>
+      </div>
+      <nav>
         <a id="home" href="../index.html">Home</a>
-        <a id="depoimento" href="../depoimentos/depoimentos.html">Depoimentos</a>
+        <a id="depoimento" href="../depoimentos/depoimentos.html"
+          >Depoimentos</a
+        >
         <a id="busca" href="../busca/busca.html">Veterinarios</a>
         <a id="ong" href="../busca/busca.html">ONGs</a>
         <a id="duvida" href="./duvidas.html">Duvidas</a>
-    </nav>
-  </header>
-  <main id="corpoDuv">
-    <div id="containerDuv">
-      <div><h1>Faça uma pergunta:</h1></div>
-      <div id="campoPergunta">
-        <input type="text" id="perguntaInput" placeholder="Digite sua pergunta..." onkeydown="if (event.key === 'Enter') adicionarPergunta()">
-        <button onclick="adicionarPergunta()" id="btnDuv1">Perguntar</button>
-    </div>
-      <div id="blog"></div>
-  </div>
-  </main>
-  <footer>
-    <div id="sobre">
-      <a id="sobreKanino" href="./index.html">Sobre a Kanino</a>
-      <p>
-        (11)9123-4567 / (11)99876-5432
-      </p>
-    </div>
-    <div id="siga">
-      <p>
-        @Kanino_Oficial
-      </p>
-      <address>
-        Endereço da empresa - São Paulo-SP
-      </address>
-    </div>
-    <div id="horario">
-      <p>
-        Prazo de resposta as duvidas de 48h<br>
-        Todos os direitos reservados
-      </p>
-    </div>
-  </footer>
-</body>
+      </nav>
+    </header>
+    <main id="corpoDuv">
+      <div id="containerDuv">
+        <div><h1>Faça uma pergunta:</h1></div>
+        <div id="campoPergunta">
+          <input
+            type="text"
+            id="perguntaInput"
+            placeholder="Digite sua pergunta..."
+            onkeydown="if (event.key === 'Enter') adicionarPergunta()"
+          />
+          <button onclick="adicionarPergunta()" id="btnDuv1">Perguntar</button>
+        </div>
+        <div id="blog"></div>
+      </div>
+
+      <div id="modal">
+        <div id="modal-content">
+          <span id="modal-close" onclick="fecharModal()">X</span>
+          <h1>Tire aqui suas duvidas</h1>
+          <p>
+            Fique a vontade para fazer uma pergunta no campo "Faça uma pergunta"
+            a seguir, digite sua pergunta relacionada a animais de estimação.
+            Você pode perguntar sobre qualquer assunto, desde cuidados de saúde
+            até comportamento.
+          </p>
+          <br />
+          <ul style="list-style-type: disc; padding-left: 10px">
+            <li>
+              <strong> Pergunta Registrada: </strong>Após digitar sua pergunta, ela será
+              registrada na nossa plataforma e encaminhada a um de nossos
+              veterinários.
+            </li>
+            <br>
+            <li>
+              <strong>Aguarde a Resposta:</strong> Nossos veterinários estão comprometidos em
+              fornecer respostas de alta qualidade e informações valiosas. Eles
+              responderão à sua pergunta o mais breve possível.
+            </li>
+            <li>
+              <strong> Receba uma Resposta Confiável: </strong>Assim que sua pergunta for
+              respondida, você verá a resposta junto com a data e hora em que
+              foi fornecida. Nossas respostas são baseadas em conhecimento
+              profissional e experiência em medicina veterinária.
+            </li>
+            <br />
+          </ul>
+          <p>
+            Lembre-se de que nossos veterinários podem receber várias perguntas
+            diariamente, portanto, pedimos que tenha paciência enquanto eles
+            trabalham para fornecer as melhores orientações possíveis. Nosso
+            objetivo é garantir que você esteja bem informado e que seus animais
+            de estimação recebam os melhores cuidados. Se você tiver alguma
+            dúvida ou preocupação, não hesite em perguntar. Estamos aqui para
+            ajudar a promover a saúde e o bem-estar dos seus animais de
+            estimação.
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div id="sobre">
+        <a id="sobreKanino" href="./index.html">Sobre a Kanino</a>
+        <p>(11)9123-4567 / (11)99876-5432</p>
+      </div>
+      <div id="siga">
+        <p>@Kanino_Oficial</p>
+        <address>Endereço da empresa - São Paulo-SP</address>
+      </div>
+      <div id="horario">
+        <p>
+          Prazo de resposta as duvidas de 48h<br />
+          Todos os direitos reservados
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
