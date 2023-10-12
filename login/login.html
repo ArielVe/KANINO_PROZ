@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imagens/kaninologo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css/estiloKanino.css">
+    <title>Login</title>
+    <script src="./login.js" defer></script>
+</head>
+<body>
+  <header>
+    <div id="cor1">
+    <!--<h1>KANINO</h1>-->
+      <p id="msg">O lugar perfeito para os seus amigos peludos!</p>
+      <div class="logCad">
+        <img id="icone" src="../imagens/icone.png" alt="">
+        <a id="entrar" href="/login/login.html">Entrar</a>                
+        <a id="cadastrar" href="/cadastro/index.html">Cadastrar</a>
+      </div>
+      <!--<div class="search-container">
+        <form action="https://www.google.com/search" method="GET" target="_blank">
+          <input type="text" class="search-box" name="q" placeholder="Localize o Veterinario mais proximo...">
+          <button type="submit" class="search-button">Pesquisar</button>
+        </form> 
+      </div>-->
+    </div>
+    <div id="img">
+      <a href="../index.html"><img id="logo" src="../imagens/kaninologo.png"></a>
+    </div>
+    <nav> 
+        <a id="home" href="./index.html">Home</a>
+        <a id="depoimento" href="./depoimentos/depoimentos.html">Depoimentos</a>
+        <a id="busca" href="./busca/busca.html">Veterinarios</a>
+        <a id="ong" href="../busca/busca.html">ONGs</a>
+        <a id="duvida" href="./duvidas/duvidas.html">Duvidas</a>
+    </nav>
+  </header>
+      <main>
+        <div class="div-login">
+            <form action="" class="form-login">
+                <label for="email"><strong>E-mail</strong></label><br>
+                <input type="email" id="email" name="email" placeholder="  Digite seu e-mail">
+                <br>
+                <br>
+                <label for="password"> <strong>Senha</strong></label><br>
+                <input type="password" id="password" name="password" placeholder="  Digite sua senha"><br>
+                <span id= "erro-login">Email ou senha incorretos, por favor, digite novamente!</span>
+                <br>
+            </form>
+            <br>
+            <br>
+            <a href="recuperacao.html">Esqueceu sua Senha?</a>
+            <br>
+            <br>
+            <button type="submit" id="buttom-login">Login</button>
+        </div>
+      </main>
+      <footer>
+        <div id="sobre">
+          <a id="sobreKanino" href="./index.html">Sobre a Kanino</a>
+          <p>
+            (11)9123-4567 / (11)99876-5432
+          </p>
+        </div>
+        <div id="siga">
+          <p>
+            @Kanino_Oficial
+          </p>
+          <address>
+            Endereço da empresa - São Paulo-SP
+          </address>
+        </div>
+        <div id="horario">
+          <p>
+            Prazo de resposta as duvidas de 48h<br>
+            Todos os direitos reservados
+          </p>
+        </div>
+      </footer>
+</body>
+</html>
