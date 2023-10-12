@@ -31,12 +31,11 @@
   </header>
   <main id="corpoDuv">
     <div id="containerDuv">
-      <button onclick="exibirCampoPergunta()" id="btnDuv1">Fazer uma pergunta</button>
-      <div id="campoPergunta" style="display: none;">
-      <!--<h1>Faça uma pergunta:</h1>-->
-          <input type="text" id="perguntaInput" onkeydown="if (event.key === 'Enter') adicionarPergunta()">
-          <button onclick="adicionarPergunta()" id="btnDuv2">Perguntar</button>
-      </div>
+      <div><h1>Faça uma pergunta:</h1></div>
+      <div id="campoPergunta">
+        <input type="text" id="perguntaInput" placeholder="Digite sua pergunta..." onkeydown="if (event.key === 'Enter') adicionarPergunta()">
+        <button onclick="adicionarPergunta()" id="btnDuv1">Perguntar</button>
+    </div>
       <div id="blog"></div>
   </div>
   </main>

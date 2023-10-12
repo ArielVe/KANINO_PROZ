@@ -531,22 +531,21 @@ article p {
 }
 
 #containerDuv {
-    margin: 2% auto;
-    width: auto;
+   
     text-align: center;
     
 }
 #corpoDuv {
-    height: 71vh;
     width: auto;
+    height: 78vh;
 }
 #campoPergunta {
-    width: 100vh;
+    width: 98%;
     text-align: left;
 }
 #btnDuv1 {
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 5px;
+    margin: 5px 0 10px 10px;
     background-color: #2B4E96;
     color: #FFD994;
     border-style: solid;
@@ -554,15 +553,9 @@ article p {
     font-weight: bold;
     cursor: pointer;
 }
-#perguntaInput {
-    padding-bottom: 20px;
-    width: 100vh;
-    font-size: 20px;
-
-}
 #btnDuv2 {
-    margin: 10px auto;
-    padding: 10px;
+    margin: 5px 0 10px 0;
+    padding: 5px;
     background-color: #2B4E96;
     color: #FFD994;
     border-style: solid;
@@ -571,7 +564,7 @@ article p {
     cursor: pointer;
 }
 #btnDuv3 {
-    margin: 10px auto;
+    margin: 5px 0 10px 0;
     padding: 5px;
     background-color: #2B4E96;
     color: #FFD994;
@@ -581,7 +574,21 @@ article p {
     font-weight: bold;
     cursor: pointer;
 }
-#btnDuv4 {
+#btnDuv1:hover, #btnDuv2:hover, #btnDuv3:hover  {
+    background-color: #FFD994;
+    color: #2B4E96;
+}
+
+#perguntaInput {
+    margin: 0 10px;
+    padding-bottom: 20px;
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+}
+
+
+/*#btnDuv4 {
     margin: 10px auto;
     padding: 5px;
     background-color: #2B4E96;
@@ -591,20 +598,20 @@ article p {
     font-size: 10px;
     font-weight: bold;
     cursor: pointer;
-}
+}*/
 .pergunta {
     margin-top: 10px;
     text-align: left;
     border: 1px solid #2B4E96;
-    padding: 10px;
+    padding: 5px;
 }
 .resposta {
     display: none;
-    padding: 10px;
+    margin-top: 5px;
 
 }
 #blog {
-    padding: 5px;
+    margin: 0 10px;
     border-style: none;
     
 }
