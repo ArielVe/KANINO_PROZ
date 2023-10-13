@@ -10,36 +10,53 @@
   <body>
     <header>
       <div id="cor1">
-        <!--<h1>KANINO</h1>-->
-          <p id="msg">O lugar perfeito para os seus amigos peludos!</p>
-          <div class="logCad">
-            <img id="icone" src="../imagens/icone.png" alt="">
-            <a id="entrar" href="/login/login.html">Entrar</a>                
-            <a id="cadastrar" href="/cadastro/index.html">Cadastrar</a>
-          </div>
+      <!--<h1>KANINO</h1>-->
+        <p id="msg">O lugar perfeito para os seus amigos peludos!</p>
+        <div class="logCad">
+          <img id="icone" src="../imagens/icone.png" alt="">
+          <a id="entrar" href="/login/login.html">Entrar</a>                
+          <a id="cadastrar" href="/cadastro/index.html">Cadastrar</a>
         </div>
-        <div id="img">
-          <a href="../index.html"><img id="logo" src="../imagens/kaninologo.png"></a>
-        </div>
-        <div id="org">
-        </div>
+        <!--<div class="search-container">
+          <form action="https://www.google.com/search" method="GET" target="_blank">
+            <input type="text" class="search-box" name="q" placeholder="Localize o Veterinario mais proximo...">
+            <button type="submit" class="search-button">Pesquisar</button>
+          </form> 
+        </div>-->
+      </div>
+      <div id="img">
+        <a href="../index.html"><img id="logo" src="../imagens/kaninologo.png"></a>
+      </div>
+      <nav> 
+          <a id="home" href="../index.html">Home</a>
+          <a id="depoimento" href="../depoimentos/depoimentos.html">Depoimentos</a>
+          <a id="busca" href="../busca/busca_veterinario.html">Veterinarios</a>
+          <a id="ong" href="../busca/busca_ong.html">ONGs</a>
+          <a id="duvida" href="../duvidas/duvidas.html">Duvidas</a>
+      </nav>
     </header>
     <main>
       <div class="container">
         <h1 class="title">Crie sua conta</h1>
         
       <div class="radio">
-        <div class="radio1"></div>
-        <input id="radio1" type="radio">
+        <input id="radio1" name="usuario" value="usuario" type="radio">
         <label for="radio1">Pessoa Fisica</label>
-        <input id="radio2" type="radio">
-        <label for="radio2">Pessoa Juridica</label>
+        <input id="radio2" name="usuario" value="veterinario" type="radio">
+        <label for="radio2">Veterinários</label>
+        <input id="radio3" name="usuario" value="ong" type="radio">
+        <label for="radio3">Ong's</label>
       </div>
              
         <div class="form-group">
             <label for="name">Nome e sobrenome</label>
             <input type="text" id="name" name="name" placeholder="Digite seu nome completo"/>
-          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="input-razao-social">Razão social</label>
+          <input type="text" id="input-razao-social" name="razao-social" placeholder="Digite a razão social"/>
+        </div>
 
           <div class="form-group">
             <label for="email">E-mail</label>
@@ -60,23 +77,18 @@
           </div>
 
           <div class="form-group">
-            <label for="gender">Sexo(opcional)</label>
-            <select id="gender" name="gender">
-              <option value="">Selecione</option>
-              <option value="Feminino">Feminino</option>
-              <option value="Masculino">Masculino</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="name">Data de nascimento</label>
-            <input type="text" id="Data de nascimento" name="name"
-              placeholder="Digite a data de nascimento"/>
-          </div>
-
-          <div class="form-group">
             <label for="name">CPF</label>
             <input type="text" id="Cpf" name="name" placeholder="Digite seu CPF"/>
+          </div>
+
+          <div class="form-group">
+            <label for="input-crmv">CRMV</label>
+            <input type="text" id="input-crmv" name="crmv" placeholder="Digite seu CRMV"/>
+          </div>
+
+          <div id="form-cnpj" class="form-group">
+            <label for="input-cnpj">CNPJ</label>
+            <input type="text" id="input-cnpj" name="cnpj" placeholder="Digite seu CNPJ"/>
           </div>
 
           <div class="form-group">
@@ -88,6 +100,15 @@
             <label for="confirm-password">Confirme sua senha</label>
             <input type="password" id="confirm-password" name="confirm-password"
               placeholder="Digite sua senha novamente"/>
+          </div>
+
+          <div class="form-group">
+            <label for="textarea-descricao">
+              Descreva o seu serviço como ONG ou veterinário
+            </label>
+            <textarea id="textarea-descricao" name="descricao" rows="4" cols="35" 
+            placeholder="">
+            </textarea>
           </div>
 
           <button type="submit" class="button">Cadastrar</button>
