@@ -1,0 +1,148 @@
+CREATE DATABASE KANINO;
+CONNECT KANINO;
+
+CREATE TABLE tutores (
+    id_tutor serial PRIMARY KEY,
+    nome VARCHAR(100),
+    cpf VARCHAR(11) UNIQUE,
+    endereco VARCHAR(100),
+    email VARCHAR(50),
+    contato VARCHAR(15),
+    senha VARCHAR(12) NOT NULL,
+    DataNascimento DATE,
+    DataCadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE funcao (
+    id_func serial PRIMARY KEY,
+    nome VARCHAR(100)
+);
+
+CREATE TABLE ongs (
+    id_ong serial PRIMARY KEY,
+    nome VARCHAR(100),
+    cnpj VARCHAR(14) UNIQUE,
+    endereco VARCHAR(100) NOT NULL,
+    email VARCHAR(24),
+    contato VARCHAR(15) NOT NULL,
+    info VARCHAR(300) NOT NULL,
+    senha VARCHAR(12) NOT NULL,
+    DataCadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE duvidas (
+    id_duv serial PRIMARY KEY,
+    pergunta VARCHAR(300) NOT NULL,
+    id_tutor INTEGER,
+    FOREIGN KEY (id_tutor) REFERENCES tutores (id_tutor)
+);
+
+CREATE TABLE veterinarios (
+    id_vet serial PRIMARY KEY,
+    nome VARCHAR(100),
+    crmv VARCHAR(10) UNIQUE,
+    endereco VARCHAR(100) NOT NULL,
+    email VARCHAR(24),
+    contato VARCHAR(15) NOT NULL,
+    info VARCHAR(300) NOT NULL,
+    senha VARCHAR(12) NOT NULL,
+    DataCadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    id_funcao INTEGER,
+    id_ong INTEGER,
+    FOREIGN KEY (id_funcao) REFERENCES funcao (id_func),
+    FOREIGN KEY (id_ong) REFERENCES ongs (id_ong)
+);
+
+CREATE TABLE respostas (
+    id_resp serial PRIMARY KEY,
+    resposta VARCHAR(300) NOT NULL,
+    id_veterinario INTEGER,
+    FOREIGN KEY (id_veterinario) REFERENCES veterinarios (id_vet)
+);
+
+ALTER TABLE tutores
+ADD COLUMN id_veterinario INTEGER,
+ADD CONSTRAINT fk_tutores_veterinarios
+    FOREIGN KEY (id_veterinario) REFERENCES veterinarios (id_vet);
+
+--===========================================
+
+INSERT INTO tutores (nome, cpf, endereco, email, contato, senha, DataNascimento) VALUES
+('Maria da Silva', '12345678901', 'Rua das Flores, 123', 'maria@email.com', '(11) 1234-5678', 'senha123', '1980-05-15'),
+('João Pereira', '98765432109', 'Avenida Principal, 456', 'joao@email.com', '(11) 9876-5432', 'senha456', '1985-09-20'),
+('Ana Souza', '45678912306', 'Travessa da Paz, 789', 'ana@email.com', '(11) 7890-1234', 'senha789', '1992-02-10'),
+('Carlos Oliveira', '78901234567', 'Rua dos Animais, 67', 'carlos@email.com', '(11) 2345-6789', 'senha567', '1988-11-30'),
+('Lucia Santos', '34567890123', 'Avenida dos Bichinhos, 12', 'lucia@email.com', '(11) 6789-0123', 'senha234', '1975-04-18'),
+('Pedro Costa', '23456789012', 'Praça dos Pets, 45', 'pedro@email.com', '(11) 9012-3456', 'senha345', '1999-08-07'),
+('Cristina Ribeiro', '89012345678', 'Alameda dos Animais, 34', 'cristina@email.com', '(11) 1234-5678', 'senha678', '1983-01-22'),
+('Mariana Xavier', '45678901234', 'Rua dos Cães, 78', 'mariana@email.com', '(11) 7890-1234', 'senha7890', '1970-06-12'),
+('Paulo Carvalho', '56789012345', 'Avenida dos Gatos, 90', 'paulo@email.com', '(11) 1234-5678', 'senha5678', '1995-12-03'),
+('Sandra Almeida', '83456789012', 'Travessa dos Animais, 56', 'sandra@email.com', '(11) 8901-2345', 'senha1234', '1989-10-14');
+
+INSERT INTO funcao (nome) VALUES
+('Clínico Geral'),
+('Cirurgião'),
+('Dermatologista'),
+('Ortopedista'),
+('Oftalmologista'),
+('Cardiologista'),
+('Oncologista'),
+('Exóticos'),
+('Comportamentalista'),
+('Nutricionista');
+
+INSERT INTO ongs (nome, cnpj, endereco, email, contato, info, senha) VALUES
+('Ong Amor pelos Animais', '12345678901234', 'Alameda dos Animais, 789', 'ong1@email.com', '(11) 7890-5678', 'Resgate de animais abandonados.', 'senhaOng1'),
+('Ong Proteção Animal', '98765432109876', 'Rua dos Cães, 234', 'ong2@email.com', '(11) 2345-8901', 'Campanhas de adoção responsável.', 'senhaOng2'),
+('Ong Vida Animal', '56789012345678', 'Avenida dos Gatos, 567', 'ong3@email.com', '(11) 5678-2345', 'Cuidado de animais de rua.', 'senhaOng3'),
+('Ong Patinhas Felizes', '23456789012345', 'Praça dos Pets, 12', 'ong4@email.com', '(11) 1234-5678', 'Recuperação de animais feridos.', 'senhaOng4'),
+('Ong Peludos Felizes', '34567890123456', 'Rua dos Bichinhos, 78', 'ong5@email.com', '(11) 5678-1234', 'Programas de castração.', 'senhaOng5'),
+('Ong Animais do Bem', '45678901234567', 'Avenida dos Amigos, 56', 'ong6@email.com', '(11) 1234-5678', 'Educação animal.', 'senhaOng6'),
+('Ong Ajuda Animal', '56759012345678', 'Travessa dos Queridos, 90', 'ong7@email.com', '(11) 9012-3456', 'Resgate e tratamento de animais doentes.', 'senhaOng7'),
+('Ong Coração Animal', '67890123456789', 'Alameda dos Peludos, 34', 'ong8@email.com', '(11) 2345-6789', 'Apoio a animais em situações de risco.', 'senhaOng8'),
+('Ong Bichinhos do Bem', '78901234567890', 'Avenida dos Cuidados, 12', 'ong9@email.com', '(11) 5678-9012', 'Adoção responsável e conscientização.', 'senhaOng9'),
+('Ong Amigos de Quatro Patas', '89012345678901', 'Rua dos Queridos, 67', 'ong10@email.com', '(11) 9012-3456', 'Atendimento de emergência a animais.', 'senhaOng10');
+
+INSERT INTO duvidas (pergunta, id_tutor) VALUES
+('Meu gato está com febre. O que devo fazer?', 11),
+('Qual a melhor ração para cães idosos?', 12),
+('Como ensinar meu cachorro a fazer as necessidades no lugar certo?', 13),
+('Meu coelho não está comendo. Isso é um problema?', 14),
+('Como cuidar de um pássaro exótico?', 15),
+('Meu gato tem pulgas. Como devo tratá-lo?', 16),
+('Qual a temperatura ideal para um terrário de répteis?', 17),
+('Meu cachorro comeu algo que não deveria. O que devo fazer?', 18),
+('Como lidar com o luto de perder um animal de estimação?', 19),
+('Meu gato está muito agressivo. O que pode estar causando isso?', 20);
+
+INSERT INTO veterinarios (nome, crmv, endereco, email, contato, info, senha, id_funcao, id_ong) VALUES
+('Dr. Carlos', 'CRMV12845', 'Rua dos Animais, 567', 'carlos@email.com', '(11) 5678-1234', 'Especializado em cirurgias.', 'senhaVet1', 11, NULL),
+('Dra. Julia', 'CRMV67890', 'Avenida dos Bichinhos, 890', 'julia@email.com', '(11) 8901-2345', 'Veterinária clínica experiente.', 'senhaVet2', 11, 12),
+('Dr. Pedro', 'CRMV59321', 'Praça dos Pets, 123', 'pedro@email.com', '(11) 1234-5678', 'Especialista em dermatologia.', 'senhaVet3', 12, 20),
+('Dra. Marta', 'CRMV98765', 'Alameda dos Animais, 34', 'marta@email.com', '(11) 5678-9012', 'Especializada em animais exóticos.', 'senhaVet4', 13, NULL),
+('Dr. João', 'CRMV34567', 'Avenida dos Cães, 78', 'joao@email.com', '(11) 9012-3456', 'Cardiologista de animais.', 'senhaVet5', 12, NULL),
+('Dra. Sofia', 'CRMV23456', 'Travessa da Paz, 56', 'sofia@email.com', '(11) 3456-7890', 'Especialista em oftalmologia.', 'senhaVet6', 11, 15),
+('Dr. Carlos', 'CRMV87654', 'Rua dos Gatos, 90', 'carlos2@email.com', '(11) 7890-1234', 'Atendimento domiciliar.', 'senhaVet7', 14, NULL),
+('Dra. Laura', 'CRMV56789', 'Praça dos Animais, 12', 'laura@email.com', '(11) 1234-5678', 'Especializada em oncologia.', 'senhaVet8', 13, 17),
+('Dr. André', 'CRMV12345', 'Avenida dos Bichanos, 67', 'andre@email.com', '(11) 5678-9012', 'Ortopedista de animais.', 'senhaVet9', 15, 11),
+('Dra. Carolina', 'CRMV54321', 'Alameda dos Cachorros, 56', 'carolina@email.com', '(11) 9012-3456', 'Clínica de pequenos animais.', 'senhaVet10', 18, 19);
+
+INSERT INTO respostas (resposta, id_veterinario) VALUES
+('Leve seu gato ao veterinário imediatamente.', 1),
+('Para cães idosos, escolha uma ração de alta qualidade com baixo teor de gordura.', 2),
+('O treinamento de recompensa é eficaz. Elogie seu cachorro quando ele fizer no lugar certo.', 3),
+('A falta de apetite em coelhos pode ser preocupante. Consulte um veterinário.', 4),
+('Pássaros exóticos requerem cuidados específicos. Consulte um especialista em aves.', 5),
+('Existem produtos antipulgas no mercado, mas consulte seu veterinário para orientação.', 6),
+('A temperatura em terrários varia, mas a maioria das espécies precisa de aquecimento.', 7),
+('Entre em contato com um veterinário imediatamente para avaliação.', 8),
+('Lidar com a perda de um animal é difícil. Procure apoio e entenda que é normal sentir tristeza.', 9),
+('A agressão em gatos pode ser causada por estresse ou problemas médicos. Consulte um veterinário.', 10);
+
+INSERT INTO tutores (nome, cpf, endereco, email, senha, DataNascimento, id_veterinario) VALUES 
+('João Silva', '88345678901', 'Rua das Flores, 123', 'joao@email.com', 'senha123', '1980-05-15', 5),
+('Julia Pereira', '24765432109', 'Avenida Principal, 456', 'julia@email.com', 'senha456', '1985-09-20', 2),
+('Carlos Santos', '59678912306', 'Travessa da Paz, 789', 'carlos@email.com', 'senha789', '1992-02-10', 7),
+('Marta Oliveira', '59901234567', 'Rua dos Animais, 67', 'marta@email.com', 'senha567', '1988-11-30', 4),
+('Pedro Costa', '93456789012', 'Praça dos Pets, 45', 'pedro@email.com', 'senha345', '1999-08-07', 3);
+
