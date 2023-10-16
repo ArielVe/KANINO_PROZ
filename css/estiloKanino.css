@@ -311,6 +311,34 @@ main {
     background-color: #F2F2F2;     
 }
 
+#erro-cep {
+    color: red;
+}
+
+#erro-email {
+    color: red;
+}
+
+#erro-cel {
+    color: red;
+}
+
+#erro-cpf {
+    color: red;
+}
+
+#erro-crmv {
+    color: red;
+}
+
+#erro-cnpj {
+    color: red;
+}
+
+#erro-senha {
+    color: red;
+}
+
 .container {
     width: 350px;
     margin: 1cm auto;

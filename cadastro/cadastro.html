@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/estiloKanino.css" />
+    <link rel="shortcut icon" href="../imagens/kaninologo.png" type="image/x-icon">
+    <title>Cadastro</title>
+    <script src="./cadastro.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div id="cor1">
+      <!--<h1>KANINO</h1>-->
+        <p id="msg">O lugar perfeito para os seus amigos peludos!</p>
+        <div class="logCad">
+          <img id="icone" src="../imagens/icone.png" alt="">
+          <a id="entrar" href="/login/login.html">Entrar</a>                
+          <a id="cadastrar" href="/cadastro/index.html">Cadastrar</a>
+        </div>
+        <!--<div class="search-container">
+          <form action="https://www.google.com/search" method="GET" target="_blank">
+            <input type="text" class="search-box" name="q" placeholder="Localize o Veterinario mais proximo...">
+            <button type="submit" class="search-button">Pesquisar</button>
+          </form> 
+        </div>-->
+      </div>
+      <div id="img">
+        <a href="../index.html"><img id="logo" src="../imagens/kaninologo.png"></a>
+      </div>
+      <nav> 
+          <a id="home" href="../index.html">Home</a>
+          <a id="depoimento" href="../depoimentos/depoimentos.html">Depoimentos</a>
+          <a id="busca" href="../busca/busca_veterinario.html">Veterinarios</a>
+          <a id="ong" href="../busca/busca_ong.html">ONGs</a>
+          <a id="duvida" href="../duvidas/duvidas.html">Duvidas</a>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <h1 class="title">Crie sua conta</h1>  
+          <div class="radio">
+            <input id="radio1" name="usuario" value="usuario" type="radio">
+            <label for="radio1">Tutores</label>
+            <input id="radio2" name="veterinario" value="veterinario" type="radio">
+            <label for="radio2">Veterinários</label>
+            <input id="radio3" name="ong" value="ong" type="radio">
+            <label for="radio3">ONG's</label>
+          </div>
+             
+          <div class="form-group">
+              <label for="name">Nome e sobrenome</label>
+              <input type="text" id="name" name="name" placeholder="Digite seu nome completo"/>
+          </div>
+
+          <div class="form-group">
+            <label for="razao-social">Razão social</label>
+            <input type="text" id="razao-social" name="razao-social" placeholder="Digite a razão social"/>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+            <span id="erro-email">Email inválido, por favor, digite novamente.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone" id="cel">Celular</label>
+            <input type="tel" id="phone" name="phone" placeholder="(XX) XXXXX-XXXX">
+            <span id="erro-cel">Número de celular incorreto, por favor, digite novamente.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefone(opcional)</label>
+            <input type="tel" id="cel" name="phone" placeholder="(XX) XXXXX-XXXX">
+          </div>
+
+          <div class="form-group">
+            <label for="name">CPF</label>
+            <input type="text" id="cpf" name="name" placeholder="Digite seu CPF"/>
+            <span id="erro-cpf">CPF digitado é incorreto, por favor, digite novamente.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="input-crmv">CRMV</label>
+            <input type="text" id="crmv" name="crmv" placeholder="Digite seu CRMV">
+            <span id="erro-crmv">CRMV digitado é incorreto, por favor, digite novamente.</span>
+          </div>
+
+          <div id="form-cnpj" class="form-group">
+            <label for="input-cnpj">CNPJ</label>
+            <input type="text" id="cnpj" name="cnpj" placeholder="Digite seu CNPJ"/>
+            <span id="erro-cnpj"> CNPJ digitado é incorreto, por favor, digite novamente. </span>
+          </div>
+
+          <div class="form-group">
+              <label for="estado">Selecione o estado:</label>
+                  <select id="estado" name="estado">
+                    <option value="AC">Acre (AC)</option>
+                    <option value="AL">Alagoas (AL)</option>
+                    <option value="AP">Amapá (AP)</option>
+                    <option value="AM">Amazonas (AM)</option>
+                    <option value="BA">Bahia (BA)</option>
+                    <option value="CE">Ceará (CE)</option>
+                    <option value="DF">Distrito Federal (DF)</option>
+                    <option value="ES">Espírito Santo (ES)</option>
+                    <option value="GO">Goiás (GO)</option>
+                    <option value="MA">Maranhão (MA)</option>
+                    <option value="MT">Mato Grosso (MT)</option>
+                    <option value="MS">Mato Grosso do Sul (MS)</option>
+                    <option value="MG">Minas Gerais (MG)</option>
+                    <option value="PA">Pará (PA)</option>
+                    <option value="PB">Paraíba (PB)</option>
+                    <option value="PR">Paraná (PR)</option>
+                    <option value="PE">Pernambuco (PE)</option>
+                    <option value="PI">Piauí (PI)</option>
+                    <option value="RJ">Rio de Janeiro (RJ)</option>
+                    <option value="RN">Rio Grande do Norte (RN)</option>
+                    <option value="RS">Rio Grande do Sul (RS)</option>
+                    <option value="RO">Rondônia (RO)</option>
+                    <option value="RR">Roraima (RR)</option>
+                    <option value="SC">Santa Catarina (SC)</option>
+                    <option value="SP">São Paulo (SP)</option>
+                    <option value="SE">Sergipe (SE)</option>
+                    <option value="TO">Tocantins (TO)</option>
+                  </select>
+          </div>
+
+          <div class="form-group">
+            <label for="input-cidade">Cidade</label>
+            <input type="text" id="input-cidade" name="cidade" placeholder="Digite cidade onde mora"/>
+          </div>
+
+          <div class="form-group">
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" name="bairro" placeholder="Digite o nome do Bairro"/>
+          </div>
+          
+          <div class="form-group">
+            <label for="logradouro">Logradouro</label>
+            <input type="text" id="logradouro" name="logradouro" placeholder="Digite a logradouro do endereço">
+          </div>
+
+          <div class="form-group">
+            <label for="num">Número Residencial</label>
+            <input type="number" id="num" name="num" placeholder="Digite o número">
+          </div>
+
+            <div class="form-group">
+              <label for="complemento">Complemento</label>
+              <input type="text" id="complemento" name="logradouro" placeholder="Digite a logradouro do endereço">
+          </div>
+
+          <div class="form-group">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" placeholder="Digite o CEP"/>
+            <span id="erro-cep">CEP digitado é incorreto, por favor, digite novamente</span>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha"/>
+          </div>
+
+          <div class="form-group">  
+            <label for="confirm-password">Confirme sua senha</label>
+            <input type="password" id="confirm-password" name="confirm-password"
+              placeholder="Digite sua senha novamente"/>
+              <span id="erro-senha">Senhas incompativeis, por favor, digite novamente.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="descricao">
+              Descreva o seu serviço como ONG ou veterinário
+            </label>
+            <textarea id="descricao" name="descricao" rows="4" cols="35" 
+            placeholder="Descreva aqui seu serviço.">
+            </textarea>
+          </div>
+          <button type="submit" class="button" id="buttom-cadastro">Cadastrar</button> 
+      </div>
+    </main>
+    <footer>
+      <div id="sobre">
+        <a id="sobreKanino" href="../index.html">Sobre a Kanino</a>
+        <p>
+          (11)9123-4567 / (11)99876-5432
+        </p>
+      </div>
+      <div id="siga">
+        <p>
+          @Kanino_Oficial
+        </p>
+        <address>
+          Endereço da empresa - São Paulo-SP
+        </address>
+      </div>
+      <div id="horario">
+        <p>
+          Prazo de resposta as duvidas de 48h<br>
+          Todos os direitos reservados
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
