@@ -30,7 +30,7 @@ function enviarResposta(button) {
   if (resposta !== "") {
     var dataHora = new Date().toLocaleString();
     var respostaP = document.createElement("p");
-    respostaP.innerHTML = `<br><span class="resposta-titulo"><strong>Resposta:</strong></span> ${resposta}`;
+    respostaP.innerHTML = `<br><span class="resposta-titulo"><strong>Resposta Dr(a):</strong></span> ${resposta}`;
     var dataHoraP = document.createElement("p");
     dataHoraP.textContent = `${dataHora}`;
     dataHoraP.classList.add("espaco-resposta");

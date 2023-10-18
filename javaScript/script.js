@@ -7,11 +7,31 @@ $(document).ready(function(){
     });
 });
 
-function guardarValor() {
-    var inputElement = document.getElementById("meuInput");
-    var inputElement2 = document.getElementById("meuInput2");
-    var valorInput = inputElement.value;
-    var valorinput2 = inputElement2.value;
-    var meuValor = valorInput + " - " + valorinput2;
-    alert("Valor inserido: " + meuValor);
+document.getElementById("depoimento-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var nome = document.getElementById("meuInput").value;
+    var depoimento = document.getElementById("depoimentoInput").value;
+
+    var depoimentos = JSON.parse(localStorage.getItem("depoimentos")) || [];
+    depoimentos.push({ nome, depoimento });
+    localStorage.setItem("depoimentos", JSON.stringify(depoimentos));
+
+    updateDepoimentos();
+});
+
+function updateDepoimentos() {
+    var depoimentos = JSON.parse(localStorage.getItem("depoimentos")) || [];
+    var depoimentoContainer = document.getElementById("depoimento-container");
+
+    depoimentoContainer.innerHTML = ""; // Limpa o contêiner
+
+    depoimentos.forEach(function(depoimento) {
+        var paragrafo = document.createElement("p");
+        paragrafo.textContent = depoimento.nome + ": " + depoimento.depoimento;
+        depoimentoContainer.appendChild(paragrafo);
+    });
 }
+
+// Carrega os depoimentos quando a página é carregada
+window.addEventListener("load", updateDepoimentos);
